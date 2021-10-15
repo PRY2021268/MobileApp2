@@ -47,7 +47,6 @@ public class Server : MonoBehaviour
 
 	public void goToRegisterButtonClicked()
 	{
-		goToRegisterButton.interactable = false;
 		registerPanel.SetActive(true);
 		loginPanel.SetActive(false);
 	}
