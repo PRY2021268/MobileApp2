@@ -125,4 +125,45 @@ public class Server : MonoBehaviour
 
 		w.Dispose ();
 	}
+
+	/*IEnumerator Update ()
+    {
+		form = new WWWForm();
+
+		form.AddField("email", regEmail.text);
+		form.AddField("username", regUsername.text);
+
+		byte[] body = System.Text.Encoding.UTF8.GetBytes(form.ToString());
+
+		UnityWebRequest w = UnityWebRequest.Put(url + "/update-profile", body);
+		yield return w.SendWebRequest();
+
+		if (w.error != null)
+		{
+			errorMessagesRegister.text = "404 not found!";
+			Debug.Log("<color=red>" + w.result + "</color>");
+		}
+		else
+		{
+			if (w.isDone)
+			{
+				if (w.result != UnityWebRequest.Result.Success)
+				{
+					errorMessagesRegister.text = "invalid username or password!";
+					Debug.Log("<color=red>" + "There was an error" + "</color>");//error
+				}
+				else
+				{
+					welcomePanel.SetActive(true);
+					user.text = username.text;
+					Debug.Log("<color=green>" + w.result + "</color>");//user exist
+				}
+			}
+		}
+
+		registerButton.interactable = true;
+		progressCircle.SetActive(false);
+
+		w.Dispose();
+	}*/
 }
