@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class MenuManager : MonoBehaviour {
     public InputField email, username, password;
-    public GameObject successPanel, failPanel, registerPanel, menuPanel, perfilPanel, 
+    public GameObject successPanel, failPanel, registerPanel, menuPanel, perfilPanel, updateProfilePanel, 
                       logoutPanel, loginPanel, statisticsPanel;
 
     public void GoToPerfil(){
@@ -27,7 +28,7 @@ public class MenuManager : MonoBehaviour {
         logoutPanel.SetActive(false);
         loginPanel.SetActive(true);
     }
-
+    
     bool IsValidEmail(string email) {
         try {
             var addr = new System.Net.Mail.MailAddress(email);
@@ -42,6 +43,12 @@ public class MenuManager : MonoBehaviour {
         } else {
             failPanel.SetActive(true);
         }
+    }
+
+    public void GoToUpdateProfile()
+    {
+        updateProfilePanel.SetActive(true);
+        perfilPanel.SetActive(false);
     }
 
     public void GoToMenu() {
@@ -63,6 +70,11 @@ public class MenuManager : MonoBehaviour {
 
     public void ReturnPerfilFromStatistics() {
         statisticsPanel.SetActive(false);
+        perfilPanel.SetActive(true);
+    }
+    public void ReturnPerfilFromUpdate()
+    {
+        updateProfilePanel.SetActive(false);
         perfilPanel.SetActive(true);
     }
 
